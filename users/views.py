@@ -29,3 +29,11 @@ def Login(request):
     else:
         login_form = LoginForm()
     return render(request, 'login.html', {'login_form': login_form})
+
+# This section deals with the logout function
+
+@login_required
+def logout(request):
+    auth.logout(request)
+    messages.success(request, "Thank you for visiting, please come again")
+    return redirect(reverse('index'))
