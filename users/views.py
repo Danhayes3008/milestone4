@@ -60,3 +60,7 @@ def registration(request):
         else:
             registration_form = RegistrationForm()
         return render(request, 'registration.html', {"registration_form": registration_form})
+    
+def profile(request):
+    user = User.objects.get(email=request.user.email)
+    return render(request, 'profile.html', {"profile": user})
