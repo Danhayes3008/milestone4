@@ -17,3 +17,10 @@ class Registration(UserCreationForm):
     class Meta:
         model = User
         fields = ['email', 'username', 'password1', 'password2']
+        
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        username = self.cleaned_data.get('username')
+        if User.objects.filter(email=email).exclude(username=username):
+            raise forms.ValidationError(u'E-mail already in use!')
+        return email
