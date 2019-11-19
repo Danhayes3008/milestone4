@@ -6,3 +6,14 @@ from django.core.exceptions import ValidationError
 class Login(forms.Form):
     username = forms.charfield()
     password = forms.CharField(widget=forms.PasswordInput)
+    
+class Registration(UserCreationForm):
+    password1 = forms.CharField(
+        label="Password",
+        widget=forms.PasswordInput)
+    password2 = forms.CharField(
+        label="Password Confirmation",
+        widget=forms.PasswordInput)
+    class Meta:
+        model = User
+        fields = ['email', 'username', 'password1', 'password2']
