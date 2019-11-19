@@ -1,4 +1,5 @@
--e "*.sqlite3\n*.pyc\__pycache__/" 
+-e "*db.sqlite3\n*.pyc\__pycache__/" 
 migrations
 .vscode
 env
+db.sqlite3
