@@ -37,3 +37,26 @@ def logout(request):
     auth.logout(request)
     messages.success(request, "Thank you for visiting, please come again")
     return redirect(reverse('index'))
+
+# this section contains the registration def used to allow new users to register an account
+
+def registration(request):
+    if request.user.is_authenticated:
+        return redirect(reverse('index'))
+    
+    if request.method == "POST":
+        registration_form = RegistrationForm(request.POST)
+        
+        if registration_form.is_valid():
+            registration_form.save()
+            
+            user = auth.authenticate(username=request.POST['username'],
+                                     password=request.POST['password'])
+            if user:
+                auth.login(user=user, request=request)
+                messages.sucess(request, "Welcome to Help the Homless")
+            else:
+                messages.error(request, "Something went wrong, please try again")
+        else:
+            registration_form = RegistrationForm()
+        return render(request, 'registration.html', {"registration_form": registration_form})
