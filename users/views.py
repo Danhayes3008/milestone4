@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from users.forms import Login, Registration
+from users.forms import LoginForm, RegistrationForm
 
 # This def will show us the index.html page 
 def index(request):
@@ -10,11 +10,11 @@ def index(request):
 
 # This def creates the login capability and uses the login form from the forms.py file
 
-def Login(request):
+def login(request):
     if request.user.is_authenticated:
         return redirect(reverse('index'))
     if request.method == "POST":
-        login_form = Login(request.POST)
+        login_form = LoginForm(request.POST)
         
         if login_form.is_valid():
             user = auth.authenticate(username=request.POST['username'],
@@ -27,7 +27,7 @@ def Login(request):
             else:
                 login_form.add_error(None, "Incorrect username or password, please try again.")
     else:
-        login_form = Login()
+        login_form = LoginForm()
     return render(request, 'login.html', {'login_form': login_form})
 
 # This section deals with the logout function
