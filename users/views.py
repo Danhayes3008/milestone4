@@ -43,24 +43,23 @@ def logout(request):
 def registration(request):
     if request.user.is_authenticated:
         return redirect(reverse('index'))
-    
-    if request.method == "POST":
-        registration_form = RegistrationForm(request.POST)
         
+    if request.method == "POST":
+        registration_form = RegistrationForm(request.POST)  
+              
         if registration_form.is_valid():
-            registration_form.save()
-            
+            registration_form.save() 
+                       
             user = auth.authenticate(username=request.POST['username'],
-                                     password=request.POST['password'])
+                                     password=request.POST['password1'])
             if user:
                 auth.login(user=user, request=request)
                 messages.sucess(request, "Welcome to Help the Homless")
             else:
                 messages.error(request, "Something went wrong, please try again")
-        else:
-            registration_form = RegistrationForm()
-        return render(request, 'registration.html', {"registration_form": registration_form})
-    
+    else:
+        registration_form = RegistrationForm()
+    return render(request, 'registration.html', {"registration_form": registration_form})
 def profile(request):
     user = User.objects.get(email=request.user.email)
     return render(request, 'profile.html', {"profile": user})
