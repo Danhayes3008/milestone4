@@ -54,7 +54,7 @@ def registration(request):
                                      password=request.POST['password1'])
             if user:
                 auth.login(user=user, request=request)
-                messages.sucess(request, "Welcome to Help the Homless")
+                messages.success(request, "Welcome to Help the Homless")
             else:
                 messages.error(request, "Something went wrong, please try again")
     else:
