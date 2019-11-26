@@ -4,7 +4,7 @@ class Projects(models.Model):
     name = models.CharField(max_length=254, default='')
     description = models.TextField()
     target = models.DecimalField(max_digits=9, decimal_places=2)
-    image = models.ImageField(uplaod_to='images')
+    image = models.ImageField(upload_to='images')
     AddressLine1 = models.CharField(max_length=50, default='')
     AddressLine2 = models.CharField(max_length=50, default='')
     town_or_city = models.CharField(max_length=50, default='')
