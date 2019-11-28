@@ -18,10 +18,12 @@ from django.contrib import admin
 from home.views import index
 from users import urls as urls_users
 from projects import urls as urls_projects
+from about import urls as urls_about
 
 urlpatterns = [
     url(r'^$', index, name='index'),
     url(r'^admin/', admin.site.urls),
     url(r'^users/', include(urls_users)),
-    url(r'^projects/', include(urls_projects))
+    url(r'^projects/', include(urls_projects)),
+    url(r'^about/', include(urls_about))
 ]
