@@ -3,7 +3,7 @@ from .views import projects, housing, training, support
 
 urlpatterns = [
     url(r'^$', projects, name="donation"),
-    url(r'^home/', housing, name="housing"),
-    url(r'^training', training, name="training"),
-    url(r'^support', support, name="support")
+    url(r'^housing/', housing, name="housing"),
+    url(r'^training/', training, name="training"),
+    url(r'^support/', support, name="support")
 ]
