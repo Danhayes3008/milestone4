@@ -2,6 +2,7 @@ from django.db import models
 
 class Projects(models.Model):
     name = models.CharField(max_length=254, default='')
+    category = models.CharField(max_length=150, default='')
     description = models.TextField()
     target = models.DecimalField(max_digits=9, decimal_places=2)
     image = models.ImageField(upload_to='images')
