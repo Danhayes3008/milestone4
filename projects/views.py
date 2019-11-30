@@ -2,11 +2,11 @@ from django.shortcuts import render
 from .models import Projects
 
 def projects(request):
-    donation = Projects.objects.all()
-    return render(request, "projects.html", {"donation": donation})
+    return render(request, "projects.html")
 
 def housing(request):
-    return render(request, "housing.html")
+    donation = Projects.objects.all()
+    return render(request, "housing.html", {"donation": donation})
 
 def training(request):
     return render(request, "training.html")
