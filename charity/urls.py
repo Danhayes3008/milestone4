@@ -27,5 +27,5 @@ urlpatterns = [
     url(r'^users/', include(urls_users)),
     url(r'^projects/', include(urls_projects)),
     url(r'^about/', include(urls_about)),
-    url(r'^donate', include(urls_donate))
+    url(r'^donate/', include(urls_donate))
 ]
