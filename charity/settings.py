@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'users',
     'projects',
     'home',
-    'about'
+    'about',
+    'donate'
 ]
 
 MIDDLEWARE = [
