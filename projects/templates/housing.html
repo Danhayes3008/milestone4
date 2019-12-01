@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <h3>Housing</h3>
-{% for project in donation %} 
+{% for project in housing %} 
 {% if project.category == "housing" %}
 <img src="{{ project.image }}"></img>
 <h3>{{ project.name }}</h3>
