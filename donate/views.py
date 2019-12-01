@@ -14,3 +14,16 @@ def amount_to_donate(request):
     
     request.session['donate'] = donate
     return redirect(reverse('index'))
+
+def adjust_donation(request):
+    print(request.POST)
+    total = int(request.POST.get('total'))
+    donate = request.session.get('donate', {})
+    
+    if total > 0:
+        donate[id] = total
+    else:
+        donate.pop(id)
+    
+    request.session['donate'] = donate
+    return redirect(reverse('view_donate'))
