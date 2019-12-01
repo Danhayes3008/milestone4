@@ -4,7 +4,7 @@
 {% for project in housing %} 
 {% if project.category == "housing" %}
 <img src="{{ project.image }}"></img>
-<h3>{{ project.name }}</h3>
+<a href="{% url 'view_donate' %}"><h3>{{ project.name }}</h3></a>
 <p>{{ project.description }}</p>
 <p>0/{{ project.target }}</p>
 <hr />
