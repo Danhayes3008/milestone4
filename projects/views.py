@@ -9,7 +9,9 @@ def housing(request):
     return render(request, "housing.html", {"housing": housing})
 
 def training(request):
-    return render(request, "training.html")
+    training = Training.objects.all()
+    return render(request, "training.html", {"training": training})
 
 def support(request):
-    return render(request, "generalSupport.html")
+    support = Support.objects.all()
+    return render(request, "generalSupport.html", {"support": support})
