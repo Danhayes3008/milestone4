@@ -1,4 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 <h3>General Support</h3>
-{% endblock %}
+{% for project in support %} 
+{% if project.category == "support" %}
+<img src="{{ project.image }}"></img>
+<h3>{{ project.name }}</h3>
+<p>{{ project.description }}</p>
+<p>0/{{ project.target }}</p>
+<hr />
+{% endif %} {% endfor %} {% endblock %}
