@@ -1,4 +1,6 @@
 from django.contrib import admin
-from .models import Projects
+from .models import Housing, Training, Support
 
-admin.site.register(Projects)
+admin.site.register(Housing)
+admin.site.register(Training)
+admin.site.register(Support)
