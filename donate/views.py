@@ -1,3 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 
-# Create your views here.
+def view_donate(request):
+    return render(request, "donate.html")
