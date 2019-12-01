@@ -1,6 +1,6 @@
 from django.db import models
 
-class Projects(models.Model):
+class Housing(models.Model):
     name = models.CharField(max_length=254, default='')
     category = models.CharField(max_length=150, default='')
     description = models.TextField()
@@ -12,6 +12,22 @@ class Projects(models.Model):
     county = models.CharField(max_length=50, default='')
     country = models.CharField(max_length=50, default='')
     postcode = models.CharField(max_length=20, default='')
+    
+    def __str__(self):
+        return self.name
+    
+class Training(models.Model):
+    name = models.CharField(max_length=254, default='')
+    description = models.CharField(max_length=300, default='')
+    target = models.DecimalField(max_digits=7, decimal_places=2)
+    
+    def __str__(self):
+        return self.name
+
+class Support(models.Model):
+    name = models.CharField(max_length=254, default='')
+    description = models.CharField(max_length=300, default='')
+    target = models.DecimalField(max_digits=7, decimal_places=2)
     
     def __str__(self):
         return self.name
