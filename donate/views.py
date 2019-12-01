@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, reverse
 def view_donate(request):
     return render(request, "donate.html")
 
-def amount_to_donate(request):
+def amount_to_donate(request, id):
     total = int(request.POST.get('total'))
     
     donate = request.session.get('cart', {})
@@ -15,7 +15,7 @@ def amount_to_donate(request):
     request.session['donate'] = donate
     return redirect(reverse('index'))
 
-def adjust_donation(request):
+def adjust_donation(request, id):
     print(request.POST)
     total = int(request.POST.get('total'))
     donate = request.session.get('donate', {})
