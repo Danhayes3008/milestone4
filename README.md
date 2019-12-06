@@ -19,3 +19,8 @@ by far it is the best one in my current opionion for web site development.
 contrabutions:
 
 used some of the lessons i have done on django as an example of how my code for this project should look like.
+
+found how to do pie charts in JavaScript from <a href="https://www.anychart.com/blog/2017/12/06/pie-chart-create-javascript/">this site.</a>
+reused the code in there how to example but made changes to suite my needs all rights to the code still belong to anychart.com 
+
+all code, images, information sourced from other sites and people are used for learning purposes and are not being used for comercial use.
