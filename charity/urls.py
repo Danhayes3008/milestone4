@@ -20,6 +20,7 @@ from users import urls as urls_users
 from projects import urls as urls_projects
 from about import urls as urls_about
 from donate import urls as urls_donate
+from contact import urls as urls_contact
 
 urlpatterns = [
     url(r'^$', index, name='index'),
@@ -27,5 +28,6 @@ urlpatterns = [
     url(r'^users/', include(urls_users)),
     url(r'^projects/', include(urls_projects)),
     url(r'^about/', include(urls_about)),
-    url(r'^donate/', include(urls_donate))
+    url(r'^donate/', include(urls_donate)),
+    url(r'^contact/', include(urls_contact))
 ]
