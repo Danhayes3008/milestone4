@@ -1,3 +1,4 @@
 from django.contrib import admin
+from .models import total_homeless
 
-# Register your models here.
+admin.site.register(total_homeless)
