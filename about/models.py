@@ -1,6 +1,7 @@
 from django.db import models
 
 class total_homeless(models.Model):
+    name = models.CharField(max_length=250, default="")
     totalHomeless = models.DecimalField(max_digits=9, decimal_places=0)
     totalPopulation = models.DecimalField(max_digits=9, decimal_places=0)
     
