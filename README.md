@@ -15,6 +15,15 @@ the use of java script is to give the site functionality.
 Django makes up the backbone of this project. with its well organised structure sites can be quickly built and deployed. It is one of many python extensions by
 by far it is the best one in my current opionion for web site development.
 
+<strong>site features:</srtong>
+
+ . barchart and pie chart displaying the amount of people living on the streets
+ . google maps in the contact us page to show the office location for the charity (not done yet but will be included)
+ . donation progress bar to show if we have met our target amount needed to complete the project. (not done yet but will be included)
+ . user settings page so that users can delete there account if they wish or change password and email address from the settings (not done yet but will be included)
+
+ more things will be added, just wanted to list some features that will be coming
+
 
 contrabutions:
 
