@@ -9,7 +9,7 @@ class total_homeless(models.Model):
         return self.name
 
 class yearly_homeless(models.Model):
-    name = models.CharField(max_length=250, defaults="")
+    name = models.CharField(max_length=250, default="")
     year = models.DecimalField(max_digits=4, decimal_places=0)
     total = models.DecimalField(max_digits=9, decimal_places=0)
     
