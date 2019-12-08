@@ -4,10 +4,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from users.forms import LoginForm, RegistrationForm
 
-# This def will show us the index.html page 
-def index(request):
-    return render(request, 'index.html')
-
 # This def creates the login capability and uses the login form from the forms.py file
 
 def login(request):
