@@ -32,4 +32,6 @@ used some of the lessons i have done on django as an example of how my code for 
 found how to do pie charts in JavaScript from <a href="https://www.anychart.com/blog/2017/12/06/pie-chart-create-javascript/">this site.</a>
 reused the code in there how to example but made changes to suite my needs all rights to the code still belong to anychart.com 
 
+The address used as the charity's office is an empty office space found on zoopla.com this was chosen as to not to give out the office address of a business currently using the address.
+
 all code, images, information sourced from other sites and people are used for learning purposes and are not being used for comercial use.
