@@ -1,5 +1,7 @@
 <strong>Project Status:</strong> under construction
 
+https://travis-ci.org/Danhayes3008/milestone4.svg?branch=master
+
 <strong><h2>Technologies:</h2></strong>
 
 <strong><h3>HTML:</h3></strong>
@@ -24,6 +26,7 @@ by far it is the best one in my current opionion for web site development.
 
  more things will be added, just wanted to list some features that will be coming
 
+<strong>Testing</strong>
 
 contrabutions:
 
