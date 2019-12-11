@@ -6,3 +6,8 @@ class TestViews(TestCase):
         page = self.client.get("/users/login/")
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "login.html")
+        
+    def test_registration_page(self):
+        page = self.client.get("/users/register/")
+        self.assertEqual(page.status_code, 200)
+        self.assertTemplateUsed(page, "registration.html")
