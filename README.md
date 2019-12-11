@@ -1,6 +1,6 @@
 <strong>Project Status:</strong> under construction
 
-https://travis-ci.org/Danhayes3008/milestone4.svg?branch=master
+[![Build Status](https://travis-ci.org/Danhayes3008/milestone4.svg?branch=master)](https://travis-ci.org/Danhayes3008/milestone4)
 
 <strong><h2>Technologies:</h2></strong>
 
