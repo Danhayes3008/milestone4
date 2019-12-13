@@ -37,4 +37,6 @@ reused the code in there how to example but made changes to suite my needs all r
 
 The address used as the charity's office is an empty office space found on zoopla.com this was chosen as to not to give out the office address of a business currently using the address.
 
+ShaneMuir_Alumni helped me alot with getting the testing working as i was having trouble getting travis to work at first, and struggled to get written tests to work. He also provided me the django doc link that explains testing and stuff.
+
 all code, images, information sourced from other sites and people are used for learning purposes and are not being used for comercial use.
