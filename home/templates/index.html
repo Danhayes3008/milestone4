@@ -1,13 +1,30 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
+
 {% block content %}
     <h1>Welcome To Help The Homeless {{ user.username }}</h1>
     <div class="jumbotron height1">
         <div class="col-md-5">
-            <img src="static/images/Homeless-1.jpg"></img>
+            <img src="{% static 'images/Homeless-1.jpg' %}"></img>
         </div>
         <div class="col-md-6">
             <p>Thousands of people at risk of dying whilst living on the streets every year. The time to act is now!</p>
         </div>
     </div>
+    <div class="jumbotron height1">
+        <div class="col-md-4">
+            <p>For many of these people becoming homeless was not a choise but due to the shortage of work and being unable to afford
+            a place to sleep at night many are being forced to sleep out in the streets or abandoned unsafe buildings. These people deserve a chance
+            to get back on there feet and gain an income that can support there basic needs.</p>
+        </div>
+        <div class="col-md-4">
+            <p>Some of the resons these poor people have been made to live in these conditions is due to no support in retraining when they
+            were made redundent from a job, or because they never got the education they needed to gain a well paying job.</p>
+        </div>
+        <div class="col-md-4">
+            <p>It is time our country starts looking inwards to fix the crisis we face. If nothing is done soon more could be at risk and no one deserves to
+            live this way.</p>
+        </div>
+    </div>
+
 {% endblock %}
