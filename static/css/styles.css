@@ -2,3 +2,7 @@ body {
     font-family: Arial;
     padding-top: 100px;
 }
+
+.height1{
+    height: 500px;
+}
