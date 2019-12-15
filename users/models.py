@@ -5,6 +5,7 @@ class Profile(models.Model):
     gender = models.CharField(max_length=6, default='')
     nationality = models.CharField(max_length=100, default='')
     birthday=models.DateField(auto_now=False, null=True, blank=True)
+    image = models.ImageField(upload_to='images')
 
     def __str__(self):
         return self.Profile
