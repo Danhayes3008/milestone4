@@ -3,6 +3,13 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
+class ProfileForm(forms.Form):
+    name = forms.CharField()
+    image = forms.ImageField()
+    gender = forms.CharField()
+    nationality = forms.CharField()
+    birthday= forms.DateField()
+
 class LoginForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
