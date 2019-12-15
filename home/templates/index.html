@@ -2,15 +2,16 @@
 {% load static from staticfiles %}
 
 {% block content %}
-    <h1>Welcome To Help The Homeless {{ user.username }}</h1>
+    <h1 class="text-center">Welcome To Help The Homeless {{ user.username }}</h1>
     <div class="jumbotron height1">
-        <div class="col-md-5">
+        <div class="col-md-4">
             <img src="{% static 'images/Homeless-1.jpg' %}"></img>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4 i-text1">
             <p>Thousands of people at risk of dying whilst living on the streets every year. The time to act is now!</p>
         </div>
     </div>
+    <h3 class="text-center">Our Goals</h3>
     <div class="jumbotron height1">
         <div class="col-md-4">
             <p>For many of these people becoming homeless was not a choise but due to the shortage of work and being unable to afford
