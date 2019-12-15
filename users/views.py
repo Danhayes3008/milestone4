@@ -59,3 +59,5 @@ def registration(request):
 def profile(request):
     user = User.objects.get(email=request.user.email)
     return render(request, 'profile.html', {"profile": user})
+def update(request):
+    return render(request, 'update.html')
