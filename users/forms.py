@@ -8,9 +8,6 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput)
     
 class RegistrationForm(UserCreationForm):
-    birth_date = forms.DateField(
-        label="Date Of Birth",
-        widget=forms.SelectDateWidget)
     password1 = forms.CharField(
         label="Password",
         widget=forms.PasswordInput)
