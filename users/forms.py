@@ -4,11 +4,19 @@ from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
 class ProfileForm(forms.Form):
-    name = forms.CharField()
+    name = forms.CharField(
+        label="full name",
+        widget=forms.TextInput)
     image = forms.ImageField()
-    gender = forms.CharField()
-    nationality = forms.CharField()
-    birthday= forms.DateField()
+    gender = forms.CharField(
+        label="Gender",
+        widget=forms.TextInput)
+    nationality = forms.CharField(
+        label="nationality",
+        widget=forms.TextInput)
+    class meta:
+        model = User
+        fields = ["user", "image", "nationality", "birthday", "gender"]
 
 class LoginForm(forms.Form):
     username = forms.CharField()
