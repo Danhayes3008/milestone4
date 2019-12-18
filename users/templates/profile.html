@@ -8,9 +8,10 @@
 {% block page_heading %}Home{% endblock %}
 
 {% block content %}
+{% if request.user.is_authenticated %}
 <div class="col-md-12">
     <h3>{{ user.username }}</h3>
-    <img src="{% static 'images/BlankProfileImage.png' %}"></img>
+    <img src="{{ MEDIA_URL }}{{ request.user.profile.image }}"></img>
 </div>
 <div class="col-md-6">
     <div>
@@ -27,10 +28,12 @@
     </div>
 </div>
 <div class="col-md-6">
-    <p><strong>Name: </strong>{{ profile.name }}
-    <p><strong>Gender: </strong>{{ profile.gender }}
-    <p><strong>Age: </strong>{{ profile.age }}
-    <p><strong>nationality: </strong>{{ profile.nationality }}
-    <p><strong>E-mail: </strong>{{ profile.email }}
+    <p><strong>username: </strong>{{ user.username }}</p>
+    <p><strong>Name: </strong>{{ request.user.profile.name }}</p>
+    <p><strong>Gender: </strong>{{ request.user.profile.gender }}</p>
+    <p><strong>birthday: </strong>{{ request.user.profile.birthday }}</p>
+    <p><strong>nationality: </strong>{{ request.user.profile.nationality }}</p>
+    {% comment %} <p><strong>E-mail: </strong>{{ request.user.email }}</p> {% endcomment %}
 </div>
+{% endif %}
 {% endblock %}
