@@ -71,14 +71,14 @@ def update_profile(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.success(request, _('Your profile was successfully updated!'))
-            return redirect('settings:profile')
+            messages.success(request, ('Your profile was successfully updated!'))
+            return redirect('profile.html')
         else:
-            messages.error(request, _('Please correct the error below.'))
+            messages.error(request, ('Please correct the error below.'))
     else:
         user_form = UserForm(instance=request.user)
         profile_form = ProfileForm(instance=request.user.profile)
-    return render(request, 'profiles/profile.html', {
+    return render(request, 'profile.html', {
         'user_form': user_form,
         'profile_form': profile_form
     })
