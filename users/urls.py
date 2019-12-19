@@ -1,5 +1,5 @@
 from django.conf.urls import url, include
-from users.views import login, logout, profile, registration, profile, update
+from users.views import login, logout, registration, profile, update
 from users import url_reset
 
 urlpatterns = [
