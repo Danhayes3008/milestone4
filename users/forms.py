@@ -2,21 +2,19 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
+from .models import Profile
+
+# class UserForm(forms.Form)
+
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'email')
 
 class ProfileForm(forms.Form):
-    name = forms.CharField(
-        label="full name",
-        widget=forms.TextInput)
-    image = forms.ImageField()
-    gender = forms.CharField(
-        label="Gender",
-        widget=forms.TextInput)
-    nationality = forms.CharField(
-        label="nationality",
-        widget=forms.TextInput)
-    class meta:
-        model = User
-        fields = ["user", "image", "nationality", "birthday", "gender"]
+    class Meta:
+        model = Profile
+        fields = ('name', 'gender', 'nationality', 'birthday', 'image')
 
 class LoginForm(forms.Form):
     username = forms.CharField()
@@ -31,7 +29,7 @@ class RegistrationForm(UserCreationForm):
         widget=forms.PasswordInput)    
     class Meta:
         model = User
-        fields = ['email', 'username', 'password1', 'password2']
+        fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
         
     def clean_email(self):
         email = self.cleaned_data.get('email')
