@@ -4,7 +4,8 @@ class Housing(models.Model):
     name = models.CharField(max_length=254, default='')
     category = models.CharField(max_length=150, default='')
     description = models.TextField()
-    target = models.DecimalField(max_digits=9, decimal_places=2)
+    donation = models.DecimalField(max_digits=9, decimal_places=2, default='1.00')
+    target = models.DecimalField(max_digits=9, decimal_places=2, default='1.00')
     image = models.ImageField(upload_to='images')
     AddressLine1 = models.CharField(max_length=50, default='')
     AddressLine2 = models.CharField(max_length=50, default='')
@@ -19,7 +20,8 @@ class Housing(models.Model):
 class Training(models.Model):
     name = models.CharField(max_length=254, default='')
     description = models.CharField(max_length=300, default='')
-    target = models.DecimalField(max_digits=7, decimal_places=2)
+    donation = models.DecimalField(max_digits=9, decimal_places=2, default='1.00')
+    target = models.DecimalField(max_digits=7, decimal_places=2, default='1.00')
     
     def __str__(self):
         return self.name
@@ -27,7 +29,8 @@ class Training(models.Model):
 class Support(models.Model):
     name = models.CharField(max_length=254, default='')
     description = models.CharField(max_length=300, default='')
-    target = models.DecimalField(max_digits=7, decimal_places=2)
+    donation = models.DecimalField(max_digits=9, decimal_places=2, default='1.00')
+    target = models.DecimalField(max_digits=7, decimal_places=2, default='1.00')
     
     def __str__(self):
         return self.name
