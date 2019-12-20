@@ -1,20 +1,23 @@
 {% extends 'base.html' %}
+​
 {% block content %}
-<h3>Housing</h3>
-{% for project in housing %} 
-{% if project.category == "housing" %}
-<img src="{{ project.image }}"></img>
-<a href="{% url 'view_donate' %}"><h3>{{ project.name }}</h3></a>
-<p>{{ project.description }}</p>
-<p>0/{{ project.target }}</p>
-<form method="post" action="{% url 'amount_to_donate' project.id %}">
-    {% csrf_token %}
-    <div class="input-group">
-        <input name="amount" type="number" min="1" max="999" class="form-control" placeholder="amount">
-        <span class="input-group-btn">
-            <button class="btn btn-success" type="submit">Donate</button>
-        </span>
-    </div>
-</form>
-<hr />
-{% endif %} {% endfor %} {% endblock %}
+	<h3>Housing</h3>
+	{% for project in housing %}
+		{% if project.category == "housing" %}
+			<div class="product" style="background-image: url('{{ MEDIA_URL }} {{ project.images }}')"></div>
+			<h3>{{ project.name }}</h3>
+			<p>{{ project.description }}</p>
+			<p>0/{{ project.target }}</p>
+			<form method="post" action="{% url 'amount_to_donate' project.id %}">
+				{% csrf_token %}
+				<div class="input-group">
+					<input name="amount" type="number" min="1" max="999" class="form-control" placeholder="amount">
+					<span class="input-group-btn">
+						<button class="btn btn-success" type="submit">Donate</button>
+					</span>
+				</div>
+			</form>
+			<hr />
+		{% endif %}
+	{% endfor %}
+{% endblock %}
