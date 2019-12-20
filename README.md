@@ -39,4 +39,7 @@ The address used as the charity's office is an empty office space found on zoopl
 
 ShaneMuir_Alumni helped me alot with getting the testing working as i was having trouble getting travis to work at first, and struggled to get written tests to work. He also provided me the django doc link that explains testing and stuff.
 
+mormoran helped me fix an error were my migrations was causing the site to crash. He talked me through how to edit a migration to fix the problem were my decimal field models
+were empty and asking for a default decimal number.
+
 all code, images, information sourced from other sites and people are used for learning purposes and are not being used for comercial use.
