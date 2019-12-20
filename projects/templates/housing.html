@@ -7,5 +7,14 @@
 <a href="{% url 'view_donate' %}"><h3>{{ project.name }}</h3></a>
 <p>{{ project.description }}</p>
 <p>0/{{ project.target }}</p>
+<form method="post" action="{% url 'amount_to_donate' project.id %}">
+    {% csrf_token %}
+    <div class="input-group">
+        <input name="amount" type="number" min="1" max="9999999" class="form-control" placeholder="amount">
+        <span class="input-group-btn">
+            <button class="btn btn-success" type="submit">Donate</button>
+        </span>
+    </div>
+</form>
 <hr />
 {% endif %} {% endfor %} {% endblock %}
