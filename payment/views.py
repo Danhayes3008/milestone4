@@ -11,5 +11,6 @@ import stripe
 # Create your views here.
 stripe.api_key = settings.STRIPE_SECRET
 
+@login_required()
 def payment(request):
     return render(request, 'payment.html')    
