@@ -13,4 +13,7 @@ stripe.api_key = settings.STRIPE_SECRET
 
 @login_required()
 def payment(request):
+    if request.method=="POST":
+        donations_form = DonationsForm(request.POST)
+        payment_form = MakePaymentForm(request.POST)
     return render(request, 'payment.html')    
