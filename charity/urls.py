@@ -21,6 +21,8 @@ from projects import urls as urls_projects
 from about import urls as urls_about
 from donate import urls as urls_donate
 from contact import urls as urls_contact
+from .settings import MEDIA_ROOT
+from django.views import static
 
 urlpatterns = [
     url(r'^$', index, name='index'),
@@ -29,5 +31,6 @@ urlpatterns = [
     url(r'^projects/', include(urls_projects)),
     url(r'^about/', include(urls_about)),
     url(r'^donate/', include(urls_donate)),
-    url(r'^contact/', include(urls_contact))
+    url(r'^contact/', include(urls_contact)),
+    url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
 ]
