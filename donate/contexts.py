@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404
-from projects.models import Project
+from projects.models import Housing, Training, Support
 
-def cart_contents(request):
+def housing_cart_contents(request):
     """
     Ensures that the cart contents are available when rendering every page
     """
@@ -11,10 +11,28 @@ def cart_contents(request):
     cart_items = []
     total = 0
     project_count = 0
-    for id, quantity in cart.items():
-        project = get_object_or_404(Project, pk=id)
-        total += quantity * project.price
-        project_count += quantity
-        cart_items.append({'id':id, 'quantity':quantity, 'product':project})
+    for id, amount in cart.items():
+        housing = get_object_or_404(Housing, pk=id)
+        total += amount * housing.donation
+        project_count += amount
+        cart_items.append({'id':id, 'amount':amount, 'housing':housing})
         
-    return {'cart_items': cart_items, 'total':total, 'product_count':project_count}
+    return {'cart_items': cart_items, 'total':total, 'project_count':project_count}
+
+def training_cart_contents(request):
+    """
+    Ensures that the cart contents are available when rendering every page
+    """
+    
+    cart = request.session.get('cart', {})
+    
+    cart_items = []
+    total = 0
+    project_count = 0
+    for id, amount in cart.items():
+        training = get_object_or_404(Training, pk=id)
+        total += amount * training.donation
+        project_count += amount
+        cart_items.append({'id':id, 'amount':amount, 'training':training})
+        
+    return {'cart_items': cart_items, 'total':total, 'project_count':project_count}
