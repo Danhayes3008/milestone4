@@ -1,4 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 <h3>Donate</h3>
+{% for item in cart_items %}
+{{item.project.name }}
+{{ item.project.discription }}
+<form method="post" action="{% url 'amount_to_donate' project.id %}">
+{% csrf_token %}
+    <div class="input-group">
+    <input name="amount" type="number" min="1" max="999" class="form-control" placeholder="amount">
+    <span class="input-group-btn">
+        <button class="btn btn-success" type="submit">Add</button>
+    </span>
+</div>
+</form>
+{% endfor %}
 {% endblock %}
