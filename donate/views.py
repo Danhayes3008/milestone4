@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse
+from projects.models import Housing
 
 # Create your views here.
 def view_donate(request):
@@ -35,4 +36,4 @@ def adjust_donation(request, id):
         cart.pop(id)
     
     request.session['cart'] = cart
-    return redirect(reverse('view_cart'))
+    return redirect(reverse('view_donate'))
