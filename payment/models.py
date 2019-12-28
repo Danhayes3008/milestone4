@@ -1,5 +1,5 @@
 from django.db import models
-from projects.views import Project
+from projects.models import Housing, Training, Support
 
 # Create your models here.
 class Donations(models.Model):
@@ -16,10 +16,10 @@ class Donations(models.Model):
     def __str__(self):
         return "{0}-{1}-{2}".format(self.id, self.date, self.full_name)
         
-class DonationsLineItem(models.Model):
+class DonationsLineItem(models.Model):    
     donations = models.ForeignKey(Donations, null=False)
-    project = models.ForeignKey(Project, null=False)
+    housing = models.ForeignKey(Housing, null=False)    
     quantity = models.IntegerField(blank=False)
     
     def __str__(self):
-        return "{0} {1} @ {2}".format(self.quantity, self.project.name, self.project.price)
+        return "{0} {1} @ {2}".format(self.quantity, self.housing.name, self.housing.price)
