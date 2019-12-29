@@ -7,6 +7,5 @@ idna==2.8
 olefile==0.46
 Pillow==4.3.0
 pytz==2019.3
-requests==2.22.0
 stripe==2.37.2
 urllib3==1.25.7
