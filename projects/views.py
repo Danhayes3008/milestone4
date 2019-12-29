@@ -1,9 +1,6 @@
 from django.shortcuts import render
-from .models import Housing
+from .models import Donations
 
 def projects(request):
-    return render(request, "projects.html")
-
-def housing(request):
-    housing = Housing.objects.all()
-    return render(request, "housing.html", {"housing": housing})
+    donations = Donations.objects.all()
+    return render(request, "projects.html",  {"donations": donations})
