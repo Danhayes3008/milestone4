@@ -5,7 +5,7 @@ from .forms  import MakePaymentForm, DonationsForm
 from .models import DonationsLineItem
 from django.conf import settings 
 from django.utils import timezone
-from projects.models import Product
+from projects.models import Donations
 import stripe
 
 # Create your views here.
