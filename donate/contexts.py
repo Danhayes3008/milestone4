@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404
-from projects.models import Housing
+from projects.models import Donations
 
 def housing_cart_contents(request):
     """
@@ -12,9 +12,9 @@ def housing_cart_contents(request):
     total = 0
     project_count = 0
     for id, amount in cart.items():
-        housing = get_object_or_404(Housing, pk=id)
-        total += amount * housing.donation
+        donations = get_object_or_404(Donations, pk=id)
+        total += amount * donations.donation
         project_count += amount
-        cart_items.append({'id':id, 'amount':amount, 'housing':housing})
+        cart_items.append({'id':id, 'amount':amount, 'donations':donations})
         
     return {'cart_items': cart_items, 'total':total, 'project_count':project_count}
