@@ -1,5 +1,5 @@
 from django.db import models
-from projects.models import Housing, Training, Support
+from projects.models import Housing
 
 # Create your models here.
 class Donations(models.Model):
