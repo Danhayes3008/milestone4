@@ -25,12 +25,3 @@ class Training(models.Model):
     
     def __str__(self):
         return self.name
-
-class Support(models.Model):
-    name = models.CharField(max_length=254, default='')
-    description = models.CharField(max_length=300, default='')
-    donation = models.DecimalField(max_digits=9, decimal_places=2, default='1.00')
-    target = models.DecimalField(max_digits=7, decimal_places=2, default='1.00')
-    
-    def __str__(self):
-        return self.name
