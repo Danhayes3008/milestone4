@@ -16,4 +16,14 @@ def payment(request):
     if request.method=="POST":
         donations_form = DonationsForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
-    return render(request, 'payment.html')    
+        
+        if donations_form.is_valid() and payment_form.is_valid():
+            donation = donations_form.save(commit=False)
+            donation.date = timezone.now()
+            donation.save()
+            
+            cart = request.session.get('cart', {})
+            total = 0
+           
+    
+    return render(request, "checkout.html")
