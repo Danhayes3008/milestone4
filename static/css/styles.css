@@ -1,12 +1,41 @@
 body {
     font-family: Arial;
     padding-top: 100px;
+    background-color: lightgrey;
+    color: black;
 }
 
 .height1{
     height: 500px;
 }
+
+.jumbotron{
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+}
 .i-text1{
     margin-left: 300px;
     padding-top: 100px;
+}
+
+.nav>li>a:hover{
+    background-color: transparent;
+    color: #2fa4e7;
+}
+
+.navbar-right{
+    margin-right: 0px;
+}
+
+a{
+    color: black;
+}
+
+.container{
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
 }
