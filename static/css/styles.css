@@ -5,6 +5,10 @@ body {
     color: black;
 }
 
+.img{
+    height: 150px;
+}
+
 .height1{
     height: 500px;
 }
