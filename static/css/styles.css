@@ -4,18 +4,31 @@ body {
     color: black;
 }
 
+.box{
+    background-color: burlywood;
+    margin-left: 80px;
+    height: 600px;
+}
+
 .navbar-1{
     background-color: darkslategray;
 }
 
 .img{
     height: 150px;
-    padding-left: 20%;
+    padding-left: 20px;
+    /* border-radius: 100%; */
 }
 
 .img-2{
     height: 150px;
-    padding-left: 15%;
+    padding-left: 10px;
+    /* border-radius: 50%; */
+}
+.img-3{
+    height: 150px;
+    padding-left: 35px;
+    /* border-radius: 50%; */
 }
 
 .height1{
@@ -25,6 +38,7 @@ body {
 
 .height2{
     height: 600px;
+    background-color: gray;
 }
 
 .jumbotron{
