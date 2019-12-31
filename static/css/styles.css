@@ -1,16 +1,30 @@
 body {
     font-family: Arial;
     padding-top: 100px;
-    background-color: lightgrey;
     color: black;
+}
+
+.navbar-1{
+    background-color: darkslategray;
 }
 
 .img{
     height: 150px;
+    padding-left: 20%;
+}
+
+.img-2{
+    height: 150px;
+    padding-left: 15%;
 }
 
 .height1{
     height: 500px;
+    background-color: burlywood;
+}
+
+.height2{
+    height: 600px;
 }
 
 .jumbotron{
