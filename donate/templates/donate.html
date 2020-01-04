@@ -2,9 +2,9 @@
 {% block content %}
 <h3>Donate</h3>
 {% for items in cart_items %}
-    <p>{{ items.housing.name }}</p>
-    <img src="{{ MEDIA_ROOT }}{{ items.housing.images }}"></img>
-    <p>{{ items.housing.description }}</p>
+    <p>{{ items.donations.name }}</p>
+    <img src="{{ MEDIA_ROOT }}{{ items.donations.images }}"></img>
+    <p>{{ items.donations.description }}</p>
     <p>{{ items.amount }}</p>
     <form method="post" action="{% url 'adjust_donation' items.id %}">
     {% csrf_token %}
