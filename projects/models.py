@@ -6,5 +6,8 @@ class Donations(models.Model):
     price = models.DecimalField(max_digits=9, decimal_places=2, default='1.00')
     target = models.DecimalField(max_digits=9, decimal_places=2, default='1.00')
     
+    class Meta:
+        verbose_name_plural = "Donations"
+    
     def __str__(self):
         return self.name
